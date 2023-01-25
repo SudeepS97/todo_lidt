@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-const uri = "mongodb+srv://sudeepsw97:nAGN1i4bQIymDIkW@cluster0.3aijqiy.mongodb.net/?retryWrites=true&w=majority";
+const uri = process.env.MONGO_URI
 const client = new MongoClient(uri);
 const db_name = "toDoList"
 const collection_name = "tasks"
